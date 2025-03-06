@@ -1,0 +1,86 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Asistencia - Colegio Fagua</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Control de Asistencia - Colegio Fagua</h1>
+        
+        <div class="form-container">
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre del Estudiante:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="grado">Grado:</label>
+                    <select id="grado" name="grado" required>
+                        <option value="1">1° Grado</option>
+                        <option value="2">2° Grado</option>
+                        <option value="3">3° Grado</option>
+                        <option value="4">4° Grado</option>
+                        <option value="5">5° Grado</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="presente" name="presente" checked>
+                    <label for="presente">Presente</label>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" id="submitBtn">Registrar Asistencia</button>
+                    <button type="reset" id="resetBtn">Limpiar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="charts-container" id="chartsContainer">
+            <!-- Chart data will be added here dynamically -->
+        </div>
+        
+        <div class="table-container">
+            <h2>Registro de Asistencia</h2>
+            <div class="form-group">
+                <label for="filter-grado">Filtrar por Grado:</label>
+                <select id="grado" name="filter-grado">
+                    <option value="all">Todos los Grados</option>
+                    <option value="1">1° Grado</option>
+                    <option value="2">2° Grado</option>
+                    <option value="3">3° Grado</option>
+                    <option value="4">4° Grado</option>
+                    <option value="5">5° Grado</option>
+                </select>
+            </div>
+            <div class="table-actions">
+                <button id="exportBtn" class="export-btn">Guardar Todos los Datos</button>
+            </div>
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Grado</th>
+                        <th>Fecha</th>
+                        <th>Asistencia</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    <!-- Attendance data will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
